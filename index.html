@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Portfolio - Andini Rahmadina</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <script src="script.js" defer></script> <!-- Link to the external JavaScript file -->
 </head>
 <body>
 
@@ -21,16 +22,18 @@
     <a href="#organization">Organization</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <a href="#testimonials">Testimonial</a>
 </nav>
 
 <section class="about" id="about">
     <div class="container" style="display: flex; align-items: flex-start; justify-content: center; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 px 0 px 10px rgb(0, 0, 0, 0.1);">
         <div style="flex: 1; max-width: 300px; margin-right: 30px;">
-            <img src="foto/aku1.jpg" alt="Foto Andini Rahmadina" style="width: 150px; height:auto ; border-radius: 15px; margin-left: 150px;">
+            <img src="foto/aku1.jpg" alt="Portrait of Andini Rahmadina" style="width: 150px; height:auto ; border-radius: 15px; margin-left: 150px;">
         </div>
         <div style="flex:2; margin-right: 100px;">
-        <h2>About Me</h2>
-        <p style="text-align: left;">Hello! I’m Andini Rahmadina, a student currently pursuing my D4 in Information Management at Universitas Negeri Surabaya. I have a passion for graphic design, web development, and exploring the intersection between business and technology. I’m always eager to learn new skills and take on challenges that can help me grow both personally and professionally.</p>
+            <h2>About Me</h2>
+            <p style="text-align: left;">Hello! I’m Andini Rahmadina, a student currently pursuing my D4 in Information Management at Universitas Negeri Surabaya. I have a passion for graphic design, web development, and exploring the intersection between business and technology. I’m always eager to learn new skills and take on challenges that can help me grow both personally and professionally.</p>
+        </div>
     </div>
 </section>
 
@@ -60,7 +63,7 @@
                     Assisted in organizing grocery product displays according to Transmart's standards and concept  
                     Prepared daily, weekly, and monthly reports on sales, stock, and promotions of grocery products  
                     Maintained the quality and availability of grocery products on shelves and in the warehouse  
-                    Provided friendly and professional customer service and information"</p>
+                    Provided friendly and professional customer service and information</p>
             </li>
             <li>
                 <h3>Freelance Web Designer</h3>
@@ -126,23 +129,6 @@
 <section class="contact" id="contact">
     <div class="container">
         <h2>Contact Me</h2>
-        <form action="#" method="post">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
-<section class="contact" id="contact">
-    <div class="container">
-        <h2>Contact Me</h2>
         <form id="contactForm" action="#" method="post" onsubmit="return handleSubmit(event);">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required>
@@ -155,27 +141,74 @@
 
             <button type="submit">Send Message</button>
         </form>
-        <div id="successMessage" style="display: none; color: green; margin-top: 10px;">Your message has been sent!</div>
+        <div id="successMessage" style="display: none; color: rgb(242, 246, 242); margin-top: 10px;">Your message has been sent!</div>
     </div>
 </section>
 
-<section class="social-media">
+<section class="testimonials" id="testimonials">
     <div class="container">
-        <h2>Follow Me</h2>
+        <h2>What People Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"Andini is a dedicated and talented individual with great attention to detail. Her work consistently exceeds expectations."</p>
+                    <h4>- HRD Freelance</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Her design skills and professionalism made a huge difference in our project. She delivers exceptional results."</p>
+                    <h4>- Klien Freelance</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Andini's organizational skills are top-notch, and she's always willing to go the extra mile to ensure success."</p>
+                    <h4>- Rekan Organisasi</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Andini's contributions to the team are really great, especially in design. She's a huge help!"</p>
+                    <h4>- Friends Organisasi</h4>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev">Previous</button>
+                <button class="slider-btn next">Next</button>
+            </div>
+            <div class="slider-dots"></div>
+        </div>
+
+        <form id="testimonialForm" onsubmit="return handleTestimonialSubmit(event);">
+            <h3>Write a Testimonial</h3>
+            <label for="testimonial-name">Your Name</label>
+            <input type="text" id="testimonial-name" name="name" required placeholder="Enter your name">
+
+            <label for="testimonial-text">Your Testimonial</label>
+            <textarea id="testimonial-text" name="testimonial" rows="4" required placeholder="Share your experience working with Andini"></textarea>
+
+            <button type="submit">Submit Testimonial</button>
+        </form>
+        <div id="testimonialSuccessMessage">
+            Thank you! Your testimonial has been submitted successfully.
+        </form>
+        <div id="testimonialSuccessMessage" style="display: none; color: rgb(255, 255, 255); margin-top: 10px; text-align: center;">Your testimonial has been submitted!</div>
+    </div>
+    </div>
+</section>
+
+<section class="social-media" id="social-media">
+    <div class="container">
+        <h2>Follow Me on Social Media</h2>
         <div class="social-links">
             <a href="https://www.instagram.com/annrmd_?igsh=Y2Ftbm1hdDU4MDZ3" target="_blank">Instagram</a>
             <a href="https://www.linkedin.com/in/andini-rahmadina-a77021281" target="_blank">LinkedIn</a>
-            <a href="http://wa.me/6281615864023" target="_blank">Whatsapp</a>
-            <a href="https://drive.google.com/file/d/1AYrePTKe22fk-f-Bvcuway8kSSkHBevP/view?usp=sharing" target="_blank">Download CV</a>
+            <a href="https://wa.me/6281615864023" target="_blank">WhatsApp</a>
+            <a href="https://drive.google.com/file/d/1jvar7LGbgRWyl_ui0bBu-QaXyaFTTP6B/view?usp=sharing" target="_blank">Download CV</a>
         </div>
     </div>
 </section>
 
-<footer>
-    <p>&copy; 2024 All rights reserved by Andini</p>
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Andini Rahmadina. All rights reserved.</p>
+    </div>
 </footer>
 
 </body>
-</html>
-
 </html>
